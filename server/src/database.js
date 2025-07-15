@@ -7,7 +7,7 @@ const { Pool } = pg
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL || 'postgres://postgres:password@localhost:5432/realtime_notes',
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+  ssl: false // Disable SSL for simplicity
 })
 
 export const initDatabase = async () => {
