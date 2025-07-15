@@ -33,7 +33,33 @@ Simple real-time collaborative notes application built with React, Node.js, and 
 
 ## Quick Start
 
-### Development
+### Using the Helper Script
+
+We've provided a helper script to make development and deployment easier:
+
+```bash
+# Make the script executable
+chmod +x scripts.sh
+
+# Show all available commands
+./scripts.sh help
+
+# Install dependencies
+./scripts.sh install
+
+# Start database for development
+./scripts.sh docker:dev
+
+# In another terminal, start development servers
+./scripts.sh dev
+
+# Or start everything with Docker
+./scripts.sh docker:up
+```
+
+### Manual Setup
+
+#### Development
 
 1. **Install dependencies:**
    ```bash
@@ -60,7 +86,7 @@ Simple real-time collaborative notes application built with React, Node.js, and 
    - Frontend: http://localhost:5173
    - Backend: http://localhost:3000
 
-### Production (Docker)
+#### Production (Docker)
 
 1. **Build and run:**
    ```bash

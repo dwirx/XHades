@@ -6,8 +6,11 @@
     "dev": "concurrently \"pnpm --filter client dev\" \"pnpm --filter server dev\"",
     "build": "pnpm --filter client build",
     "start": "pnpm --filter server start",
+    "build:production": "pnpm --filter client build && pnpm --filter server build",
+    "docker:build": "docker-compose build",
     "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down"
+    "docker:down": "docker-compose down",
+    "docker:rebuild": "docker-compose down && docker-compose build --no-cache && docker-compose up -d"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:current-alpine3.22
 
 WORKDIR /app
 
@@ -24,7 +24,7 @@ COPY server/ ./server/
 RUN pnpm --filter client build
 
 # Expose port
-EXPOSE 3000
+EXPOSE 3003
 
 # Start the application
 CMD ["pnpm", "start"]

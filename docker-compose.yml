@@ -4,23 +4,25 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "3003:3003"
     depends_on:
       - postgres
+    env_file:
+      - .env.docker
     environment:
       - NODE_ENV=production
       - DATABASE_URL=postgres://postgres:password@postgres:5432/realtime_notes
-      - PORT=3000
-      - SESSION_SECRET=your-secret-key-here
+      - PORT=3003
     restart: unless-stopped
     volumes:
-      - ./server:/app/server
       - ./client/dist:/app/client/dist
     networks:
       - app-network
 
   postgres:
     image: postgres:15
+    env_file:
+      - .env.docker
     environment:
       - POSTGRES_DB=realtime_notes
       - POSTGRES_USER=postgres
